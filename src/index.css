@@ -1,13 +1,139 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+  --white: white;
+  --bg-body: #f8f8f8;
+  --shadow: rgba(0, 0, 0, 0.1);
+  --d-shadow: #f6f6f6;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-body)
+}
+
+header {
+  background: var(--white);;
+  box-shadow: 0 0 5px var(--shadow);
+}
+
+header nav {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+.nav-ul li {
+  margin: 0px 10px;
+}
+
+.recipes-home {
+  width: 80%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.recipes-home .recipe-home-info {
+  background: var(--white);;
+  box-shadow: 0 0 10px var(--shadow);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.recipes-home .img-contain {
+  width: 100%;
+  object-fit: contain;
+}
+
+.recipes-home div p {
+  margin: 10px 0px;
+}
+
+.recipes-home div img {
+  border-radius: 5px;
+}
+
+.recipe-form {
+  width: 80%;
+  margin: 80px auto;
+  padding: 40px;
+  background: var(--white);;
+  border-radius: 15px;
+  box-shadow: 5px 5px 10px var(--shadow)
+}
+
+.recipe-form h1 {
+  font-size: 28px;
+}
+
+.recipe-form form {
+  width: 60%;
+  margin: 40px auto 0px;
+}
+
+.recipe-form-output {
+  width: 60%;
+  margin: 0 auto;
+  box-shadow: 0 0 5px var(--shadow);
+  background: var(--d-shadow);
+  padding: 14px 10px;
+  margin-top: 10px;
+}
+
+.recipe-form-output p {
+  margin: 10px 0px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #4b4b4b;
+  padding: 5px;
+}
+
+.recipe-form-output p:hover {
+  background: #e7e7e7
+}
+
+
+.container {
+  width: 80%;
+  margin: 40px auto 0px
+}
+
+.recipe-info {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px
+}
+
+.recipe-info .info-box {
+  background: var(--white);;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px var(--shadow);
+  height: max-content;
+  line-break:strict
+}
+.info-box p{
+  margin: 10px 0px;
+}
+.info-box span{
+  margin-right: 10px;
+}
+.info-box .diets span{
+  background: var(--bg-body);
+  padding: 5px 10px;
+  border: 1px solid var(--d-shadow);
+  border-radius: 5px;
+  margin-right: 10px;
 }
